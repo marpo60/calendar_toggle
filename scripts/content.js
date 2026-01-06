@@ -7,9 +7,20 @@ const groupings =
     ]
   }
 
-function handler() {
+async function handler() {
   const group = groupings[this.id];
   const checked = this.checked;
+
+  document.body.style.zoom = "50%";
+  const el = [...document.querySelectorAll('*')].find(e => e.textContent.trim() === 'My calendars');
+
+  el.click();
+
+  await new Promise(r => setTimeout(r, 200));
+
+  el.click();
+
+  await new Promise(r => setTimeout(r, 200));
 
   group.forEach((calendarName) => {
     let s = Array.from(document.querySelectorAll("input[aria-label]")).find((s) => s.ariaLabel.includes(calendarName));
@@ -18,7 +29,10 @@ function handler() {
       s.click();
     }
   });
+
+  document.body.style.zoom = "100%";
 };
+
 const dayDropdown = document.querySelector("*[data-active-view]");
 
 for (const [key, value] of Object.entries(groupings)) {
