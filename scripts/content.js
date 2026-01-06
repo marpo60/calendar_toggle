@@ -1,11 +1,4 @@
-// Change this //
-const groupings =
-  {
-    "group": [
-      "A",
-      "B"
-    ]
-  }
+// groupings loaded from calendars.js
 
 async function handler() {
   const group = groupings[this.id];

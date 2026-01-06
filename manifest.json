@@ -5,7 +5,7 @@
   "description": "",
   "content_scripts": [
     {
-      "js": ["scripts/content.js"],
+      "js": ["scripts/calendars.js", "scripts/content.js"],
       "matches": [
         "https://calendar.google.com/*"
       ]
